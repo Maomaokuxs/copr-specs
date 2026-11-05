@@ -2,7 +2,7 @@
 
 Name:           python3-imageio-ffmpeg
 Version:        0.8.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        FFMPEG wrapper for Python (with bundled static binary)
 
 License:        BSD-2-Clause
@@ -33,18 +33,18 @@ sitelib=$(python3 -c "import sysconfig; print(sysconfig.get_path('purelib'))")
 mkdir -p %{buildroot}$sitelib
 cp -a imageio_ffmpeg %{buildroot}$sitelib/
 mkdir -p %{buildroot}$sitelib/imageio_ffmpeg-%{version}.dist-info
-cp -a imageio_ffmpeg-%{version}.dist-info/{METADATA,WHEEL,top_level.txt,LICENSE} \
+cp -a imageio_ffmpeg-%{version}.dist-info/{METADATA,WHEEL,top_level.txt,licenses} \
     %{buildroot}$sitelib/imageio_ffmpeg-%{version}.dist-info/
 chmod +x %{buildroot}$sitelib/imageio_ffmpeg/binaries/ffmpeg-linux-*
 
 %files
-%license imageio_ffmpeg-%{version}.dist-info/LICENSE
+%license imageio_ffmpeg-%{version}.dist-info/licenses/LICENSE
 %{python3_sitelib}/imageio_ffmpeg/
 %{python3_sitelib}/imageio_ffmpeg-%{version}.dist-info/
 
 %changelog
-* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.8.1-1
-- Update to 0.8.1
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.8.1-2
+- Fix LICENSE path for 0.8.1 (moved to licenses/)
 
 * Sat Sep 26 2026 Maomaokuxs <biyuanh@qq.com> - 0.6.0-1
 - Initial package (wheel repack, ffmpeg binary for waypaper video wallpapers)
