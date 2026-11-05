@@ -1,5 +1,5 @@
 Name:           hyprpicker
-Version:        0.4.7
+Version:        0.4.8
 Release:        1%{?dist}
 Summary:        Hyprland screen color picker
 
@@ -40,5 +40,8 @@ copy the color in hex, rgb, hsl or cmyk format to the clipboard.
 %{_mandir}/man1/hyprpicker.1*
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.4.8-1
+- Update to 0.4.8
+
 * Thu Sep 24 2026 Maomaokuxs <biyuanh@qq.com> - 0.4.7-1
 - Initial package
