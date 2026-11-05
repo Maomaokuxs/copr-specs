@@ -3,7 +3,7 @@
 %global __requires_exclude ^(libEGL|libGLESv2|libffmpeg|libvk_swiftshader|libvulkan|libnode).*
 
 Name:           splayer-next
-Version:        1.1.0
+Version:        1.2.0
 Release:        1%{?dist}
 Summary:        Cross-platform desktop music player with rich lyric support
 
@@ -74,6 +74,9 @@ fi
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 1.2.0-1
+- Update to 1.2.0
+
 * Fri Aug 28 2026 Maomaokuxs <biyuanh@qq.com> - 1.1.0-1
 - Update to 1.1.0
 
