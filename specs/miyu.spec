@@ -1,5 +1,5 @@
 Name:           miyu
-Version:        0.7.1
+Version:        0.7.4
 Release:        1%{?dist}
 
 # Upstream Arch pkgrel embedded in the release asset name
@@ -35,6 +35,9 @@ cp -a usr/share/miyu/* %{buildroot}%{_datadir}/miyu/ 2>/dev/null || true
 %{_datadir}/miyu/
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.7.4-1
+- Update to 0.7.4
+
 * Thu Oct 22 2026 Maomaokuxs <biyuanh@qq.com> - 0.7.1-1
 - Update to 0.7.1
 
