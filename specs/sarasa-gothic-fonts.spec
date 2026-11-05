@@ -1,5 +1,5 @@
 Name:           sarasa-gothic-fonts
-Version:        1.0.42
+Version:        1.0.43
 Release:        1%{?dist}
 Summary:        Sarasa Gothic CJK programming font
 
@@ -32,6 +32,9 @@ install -m 644 Sarasa-*.ttc %{buildroot}%{_datadir}/fonts/sarasa-gothic/
 %{_datadir}/fonts/sarasa-gothic/
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 1.0.43-1
+- Update to 1.0.43
+
 * Sat Oct 03 2026 Maomaokuxs <biyuanh@qq.com> - 1.0.42-1
 - Update to 1.0.42
 
