@@ -1,5 +1,5 @@
 Name:           hyprlock
-Version:        0.9.6
+Version:        0.9.7
 Release:        1%{?dist}
 Summary:        Hyprland screen locker
 
@@ -49,5 +49,8 @@ blur, background images, and per-monitor input fields.
 %{_datadir}/hypr/hyprlock.conf
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.9.7-1
+- Update to 0.9.7
+
 * Tue Sep 22 2026 Maomaokuxs <biyuanh@qq.com> - 0.9.6-1
 - Initial package (clone for biyuan/software)
