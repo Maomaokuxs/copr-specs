@@ -1,5 +1,5 @@
 Name:           sarasa-term-fonts
-Version:        1.0.42
+Version:        1.0.43
 Release:        1%{?dist}
 Summary:        Sarasa Term CJK programming font (terminal)
 
@@ -89,6 +89,9 @@ done
 %{_datadir}/fonts/sarasa-term-cl/
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 1.0.43-1
+- Update to 1.0.43
+
 * Sat Oct 03 2026 Maomaokuxs <biyuanh@qq.com> - 1.0.42-1
 - Update to 1.0.42
 
