@@ -1,5 +1,5 @@
 Name:           hyprutils
-Version:        0.14.2
+Version:        0.14.3
 Release:        1%{?dist}
 Summary:        Hyprland C++ utility library
 
@@ -43,5 +43,8 @@ against hyprutils.
 %{_libdir}/pkgconfig/hyprutils.pc
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.14.3-1
+- Update to 0.14.3
+
 * Tue Sep 22 2026 Maomaokuxs <biyuanh@qq.com> - 0.14.2-1
 - Initial package (clone for biyuan/software)
