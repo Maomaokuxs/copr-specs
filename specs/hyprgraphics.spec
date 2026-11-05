@@ -1,5 +1,5 @@
 Name:           hyprgraphics
-Version:        0.5.1
+Version:        0.6.0
 Release:        1%{?dist}
 Summary:        Hyprland graphics / image loading library
 
@@ -56,5 +56,8 @@ Headers and pkg-config file for developing against hyprgraphics.
 %{_libdir}/pkgconfig/hyprgraphics.pc
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.6.0-1
+- Update to 0.6.0
+
 * Tue Sep 22 2026 Maomaokuxs <biyuanh@qq.com> - 0.5.1-1
 - Initial package (clone for biyuan/software)
