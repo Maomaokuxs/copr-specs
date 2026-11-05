@@ -1,13 +1,13 @@
 %global debug_package %{nil}
 
 Name:           python3-imageio-ffmpeg
-Version:        0.6.0
+Version:        0.8.1
 Release:        1%{?dist}
 Summary:        FFMPEG wrapper for Python (with bundled static binary)
 
 License:        BSD-2-Clause
 URL:            https://github.com/imageio/imageio-ffmpeg
-Source0:        https://files.pythonhosted.org/packages/a0/2d/43c8522a2038e9d0e7dbdf3a61195ecc31ca576fb1527a528c877e87d973/imageio_ffmpeg-%{version}-py3-none-manylinux2014_x86_64.whl
+Source0:        https://files.pythonhosted.org/packages/de/0f/49292fbef69ee10ebcf97bb741602521caafcc6966d5fa1a2b868cc15655/imageio_ffmpeg-%{version}-py3-none-manylinux_2_28_x86_64.whl
 
 BuildRequires:  python3-devel
 BuildRequires:  python3
@@ -43,5 +43,8 @@ chmod +x %{buildroot}$sitelib/imageio_ffmpeg/binaries/ffmpeg-linux-*
 %{python3_sitelib}/imageio_ffmpeg-%{version}.dist-info/
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.8.1-1
+- Update to 0.8.1
+
 * Sat Sep 26 2026 Maomaokuxs <biyuanh@qq.com> - 0.6.0-1
 - Initial package (wheel repack, ffmpeg binary for waypaper video wallpapers)
