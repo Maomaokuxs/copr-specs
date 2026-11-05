@@ -2,7 +2,7 @@
 
 Name:           rime-ice
 Version:        2026.10.31
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Simplified Chinese input schema for Rime (Wusong Pinyin)
 
 License:        GPL-3.0-only
@@ -11,6 +11,7 @@ Source0:        https://github.com/iDvel/rime-ice/releases/download/nightly/full
 
 BuildArch:      noarch
 Requires:       librime
+Requires:       librime-lua
 
 %description
 Rime Ice (雾凇拼音) is a long-maintained simplified Chinese input
@@ -60,6 +61,8 @@ fi
 %{_bindir}/rime-ice-enable
 
 %changelog
+* Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 2026.10.31-2
+- Require librime-lua (rime-ice schemas use lua_processor/translator/filter)
 * Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 2026.10.31-1
 - Update to 2026.10.31
 
