@@ -4,14 +4,14 @@
 
 Name:           bilibili
 Version:        1.20.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Bilibili desktop client for Linux
 
 # 上游声明：MIT 仅覆盖项目脚本，客户端二进制版权归上海宽娱所有，
 # 故本包标记为 Proprietary（见上游 README 免责声明）。
 License:        MIT
 URL:            https://github.com/msojocs/bilibili-linux
-Source0:        https://github.com/msojocs/bilibili-linux/releases/download/v1.20.0-1/bilibili-v1.20.0-1-x64.tar.gz
+Source0:        https://github.com/msojocs/bilibili-linux/releases/download/v1.20.0-2/bilibili-v1.20.0-2-x64.tar.gz
 Source1:        https://raw.githubusercontent.com/Maomaokuxs/rpmbuild/main/assets/bilibili/bilibili-icon.png
 Source2:        https://raw.githubusercontent.com/msojocs/bilibili-linux/master/license#/LICENSE
 
@@ -64,6 +64,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 %changelog
+* Sat Nov 07 2026 Maomaokuxs <biyuanh@qq.com> - 1.20.0-2
+- Update to upstream v1.20.0-2
+
 * Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 1.20.0-1
 - Update to upstream v1.20.0-1
 
