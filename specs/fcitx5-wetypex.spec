@@ -104,6 +104,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/fcitx5-wetypex-settin
 %{_datadir}/fcitx5-wetypex/
 %{_datadir}/applications/fcitx5-wetypex-settings.desktop
 %{_datadir}/icons/hicolor/*/apps/fcitx5-wetypex.png
+%{_datadir}/icons/hicolor/scalable/apps/fcitx5-wetypex*.svg
 %{_datadir}/doc/fcitx5-wetypex/
 %{_datadir}/licenses/fcitx5-wetypex/
 
