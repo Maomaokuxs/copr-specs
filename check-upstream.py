@@ -11,6 +11,10 @@ check-upstream.py —— 扫描 specs/ 下所有包，对比上游最新版本�
 用法:
     ./check-upstream.py                    # 检查全部
     ./check-upstream.py rime-ice waypaper   # 只检查指定包
+
+并行检查（默认 10 线程），全部包共享一个全局超时
+（默认 300 秒，可用 UPSTREAM_CHECK_TIMEOUT 环境变量改）：
+超时未完成的包记为 TIMEOUT，脚本以 exit 1 退出。
 """
 
 import json
@@ -20,6 +24,7 @@ import subprocess
 import sys
 import urllib.request
 import urllib.error
+from concurrent.futures import ThreadPoolExecutor, wait
 from datetime import datetime
 
 SPECS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "specs")
@@ -27,6 +32,10 @@ GH = "https://github.com"
 UA = {"User-Agent": "copr-upstream-checker"}
 
 _cache = {}
+
+# 并行线程数；全局超时（秒），超时未完成的包记为 TIMEOUT 并 exit 1
+MAX_WORKERS = 10
+GLOBAL_TIMEOUT = int(os.environ.get("UPSTREAM_CHECK_TIMEOUT", "300"))
 
 
 def norm(v):
@@ -276,44 +285,94 @@ def effective_version(ver, rel):
     return ver
 
 
+def check_one(spec, parsed):
+    """查单个包，返回 (status, name, disp, detail)。
+    status: OK / BEHIND / UNKNOWN / SKIP。disp 是结果行里显示的版本号
+    （OK/UNKNOWN 显示 spec 的 Version，BEHIND 显示并入 Release 后的版本）。
+    只做本包的事，不打印结果行——结果由 main 汇总后按 spec 顺序打印，
+    避免多线程输出交错。"""
+    name, ver, url, rel = parsed
+    ever = effective_version(ver, rel)
+    if name in SPECIAL:
+        up = SPECIAL[name](None, None, ver)
+    elif not url or SKIP_RE.search(url or ""):
+        return ("SKIP", name, ver, "非 GitHub 上游")
+    else:
+        m = re.match(r"https?://codeberg\.org/([^/]+)/([^/]+?)(?:\.git)?/?$", url)
+        if m:
+            up = _codeberg(m.group(1), m.group(2))
+        else:
+            m = re.match(r"https?://github\.com/([^/]+)/([^/]+?)(?:\.git)?/?$", url)
+            if not m:
+                return ("SKIP", name, ver, "URL 无法解析: %s" % url)
+            up = upstream_version(m.group(1), m.group(2))
+    if not up:
+        return ("UNKNOWN", name, ver, "上游无 release/tag")
+    if cmp_ver(ever, up) < 0:
+        return ("BEHIND", name, ever, norm(up))
+    return ("OK", name, ver, "")
+
+
 def main():
     only = set(sys.argv[1:])
     specs = sorted(p for p in os.listdir(SPECS_DIR) if p.endswith(".spec"))
-    behind, unknown, skipped = [], [], []
+    todo = []       # (spec 文件名, parse_spec 结果)
     for spec in specs:
-        name, ver, url, rel = parse_spec(os.path.join(SPECS_DIR, spec))
-        ever = effective_version(ver, rel)
-        if not name or not ver:
+        parsed = parse_spec(os.path.join(SPECS_DIR, spec))
+        name = parsed[0]
+        if not name or not parsed[1]:
             continue
         if only and name not in only:
             continue
-        if name in SPECIAL:
-            up = SPECIAL[name](None, None, ver)
-        elif not url or SKIP_RE.search(url or ""):
-            skipped.append((name, "非 GitHub 上游"))
-            continue
-        else:
-            m = re.match(r"https?://codeberg\.org/([^/]+)/([^/]+?)(?:\.git)?/?$", url)
-            if m:
-                up = _codeberg(m.group(1), m.group(2))
-            else:
-                m = re.match(r"https?://github\.com/([^/]+)/([^/]+?)(?:\.git)?/?$", url)
-                if not m:
-                    skipped.append((name, "URL 无法解析: %s" % url))
-                    continue
-                up = upstream_version(m.group(1), m.group(2))
-        if not up:
-            unknown.append(name)
-            print(f"UNKNOWN {name:28s} {ver} (上游无 release/tag)")
-        elif cmp_ver(ever, up) < 0:
+        todo.append((spec, parsed))
+
+    ex = ThreadPoolExecutor(max_workers=MAX_WORKERS)
+    futs = {ex.submit(check_one, spec, parsed): spec for spec, parsed in todo}
+    done, not_done = wait(futs, timeout=GLOBAL_TIMEOUT)
+    timed_out = set()
+    for f in not_done:
+        f.cancel()
+        timed_out.add(futs[f])
+    # 不等未完成的任务：它们受各自 20/30 秒请求超时约束，最多再拖一阵；
+    # cancel 只取消排队中的，运行中的由解释器退出时回收。
+    ex.shutdown(wait=False, cancel_futures=True)
+
+    results = {}    # spec 文件名 -> (status, name, disp, detail)
+    for f in done:
+        spec = futs[f]
+        try:
+            r = f.result()
+        except Exception as e:
+            print(f"  ! {spec} 检查异常: {e}", file=sys.stderr)
+            r = None
+        if r is not None:
+            results[spec] = r
+    for spec in timed_out:
+        results[spec] = ("TIMEOUT", parse_spec(os.path.join(SPECS_DIR, spec))[0], "", "")
+
+    behind, unknown, skipped = [], [], []
+    for spec, parsed in todo:
+        status, name, disp, detail = results[spec]
+        if status == "OK":
+            print(f"OK      {name:28s} {disp}")
+        elif status == "BEHIND":
             behind.append(name)
-            print(f"BEHIND  {name:28s} {ever} -> {norm(up)}")
-        else:
-            print(f"OK      {name:28s} {ver}")
+            print(f"BEHIND  {name:28s} {disp} -> {detail}")
+        elif status == "TIMEOUT":
+            unknown.append(name)
+            print(f"TIMEOUT {name:28s} (全局超时，未完成)")
+        elif status == "SKIP":
+            skipped.append((name, detail))
+        else:  # UNKNOWN
+            unknown.append(name)
+            print(f"UNKNOWN {name:28s} {disp} (上游无 release/tag)")
 
     print(f"\n{len(behind)} 个落后, {len(unknown)} 个未知, {len(skipped)} 个跳过")
     for n, why in skipped:
         print(f"  跳过 {n}: {why}")
+    if timed_out:
+        print(f"\n全局超时 {GLOBAL_TIMEOUT} 秒：{len(timed_out)} 个包未完成")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
