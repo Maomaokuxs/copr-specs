@@ -1,6 +1,6 @@
 Name:           hyprlock
 Version:        0.9.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Hyprland screen locker
 
 License:        BSD-3-Clause
@@ -49,6 +49,8 @@ blur, background images, and per-monitor input fields.
 %{_datadir}/hypr/hyprlock.conf
 
 %changelog
+* Tue Nov 10 2026 Maomaokuxs <biyuanh@qq.com> - 0.9.7-2
+- Rebuild against hyprgraphics 0.6.0 (soname .so.4 -> .so.5)
 * Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.9.7-1
 - Update to 0.9.7
 
