@@ -1,6 +1,6 @@
 Name:           hyprlang
 Version:        0.6.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Hyprland config language library
 
 License:        LGPL-3.0-only
@@ -42,5 +42,7 @@ Headers and pkg-config file for developing against hyprlang.
 %{_libdir}/pkgconfig/hyprlang.pc
 
 %changelog
+* Tue Nov 10 2026 Maomaokuxs <biyuanh@qq.com> - 0.6.8-2
+- Rebuild to match installed release (drop eddievs/hyprland)
 * Tue Sep 22 2026 Maomaokuxs <biyuanh@qq.com> - 0.6.8-1
 - Initial package (clone for biyuan/software)
