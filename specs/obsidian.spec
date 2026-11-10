@@ -3,7 +3,7 @@
 %global __arch_install_post %{nil}
 
 Name:           obsidian
-Version:        1.14.4
+Version:        1.15.0
 Release:        1%{?dist}
 Summary:        Obsidian - a powerful knowledge base on top of a local folder of plain text Markdown files
 
@@ -71,5 +71,7 @@ gtk-update-icon-cache -q %{_datadir}/icons/hicolor 2>/dev/null || :
 %{_datadir}/mime/packages/obsidian.xml
 
 %changelog
+* Tue Nov 10 2026 Maomaokuxs <biyuanh@qq.com> - 1.15.0-1
+- Update to 1.15.0
 * Thu Oct 22 2026 Maomaokuxs <biyuanh@qq.com> - 1.14.4-1
 - Initial package: repackage official Linux deb, no program changes
