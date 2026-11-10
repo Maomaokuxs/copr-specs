@@ -1,6 +1,6 @@
 Name:           gpu-screen-recorder
 Version:        6.1.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ShadowPlay-like GPU screen recorder for Linux
 
 License:        GPL-3.0-only
@@ -65,6 +65,8 @@ setcap cap_sys_admin+ep %{_bindir}/gsr-kms-server || :
 %{_mandir}/man1/gsr-cli.1*
 
 %changelog
+* Tue Nov 10 2026 Maomaokuxs <biyuanh@qq.com> - 6.1.7-2
+- Rebuild to match installed release (drop ackerman/nexus)
 * Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 6.1.7-1
 - Update to 6.1.7
 
