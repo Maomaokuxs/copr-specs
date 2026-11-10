@@ -4,7 +4,7 @@
 
 Name:           splayer-next
 Version:        1.2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Cross-platform desktop music player with rich lyric support
 
 License:        AGPL-3.0-only
@@ -74,6 +74,8 @@ fi
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Nov 10 2026 Maomaokuxs <biyuanh@qq.com> - 1.2.0-2
+- Rebuild to match installed release (drop ackerman/nexus)
 * Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 1.2.0-1
 - Update to 1.2.0
 
