@@ -5,7 +5,7 @@
 
 Name:           localsend
 Version:        1.18.2
-Release:        1%{?dist}
+Release:        5%{?dist}
 Summary:        Open source cross-platform alternative to AirDrop
 
 License:        Apache-2.0
@@ -59,5 +59,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/localsend_app.desktop
 %{_datadir}/icons/hicolor/
 
 %changelog
+* Tue Nov 10 2026 Maomaokuxs <biyuanh@qq.com> - 1.18.2-5
+- Rebuild to match installed release (drop ackerman/nexus)
 * Sat Oct 17 2026 Maomaokuxs <biyuanh@qq.com> - 1.18.2-1
 - Initial package (repack official upstream DEB)
