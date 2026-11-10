@@ -1,8 +1,8 @@
-%global commit fd473f6d5ee2e418b32c6a125c509f97eb55f906
+%global commit 6b4bb2b8b75bf2b5890ad83f0e1bd2948378a7fe
 
 Name:           biyuan-niri-config
 Version:        20260922
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Biyuan niri desktop environment configs
 
 License:        MIT
@@ -76,5 +76,7 @@ echo "Biyuan niri desktop installed. Run 'biyuan-niri-deploy' as your user,"
 echo "then log into a niri session (first login initializes wallpaper/theme)."
 
 %changelog
+* Tue Nov 10 2026 Maomaokuxs <biyuanh@qq.com> - 20260922-2
+- Update pinned commit after history rewrite
 * Tue Sep 22 2026 Maomaokuxs <biyuanh@qq.com> - 20260922-1
 - Initial package (niri desktop configs, quickshell default bar)
