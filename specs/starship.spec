@@ -1,6 +1,6 @@
 Name:           starship
 Version:        1.27.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Minimal, fast, customizable shell prompt
 
 License:        ISC
@@ -40,6 +40,8 @@ mkdir -p %{buildroot}%{_datadir}/fish/vendor_completions.d
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
+* Tue Nov 10 2026 Maomaokuxs <biyuanh@qq.com> - 1.27.0-2
+- Rebuild to match installed release (drop ackerman/nexus)
 * Sun Oct 18 2026 Wed Sep 23 2026 Maomaokuxs - 1.27.0-1
 - Update to 1.27.0
 * Wed Sep 23 2026 Maomaokuxs <biyuanh@qq.com> - 1.26.0-1
