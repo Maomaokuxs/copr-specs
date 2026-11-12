@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:           rime-ice
-Version:        2026.10.31
-Release:        2%{?dist}
+Version:        2026.11.11
+Release:        1%{?dist}
 Summary:        Simplified Chinese input schema for Rime (Wusong Pinyin)
 
 License:        GPL-3.0-only
@@ -61,6 +61,8 @@ fi
 %{_bindir}/rime-ice-enable
 
 %changelog
+* Thu Nov 12 2026 Maomaokuxs <biyuanh@qq.com> - 2026.11.11-1
+- Update nightly snapshot to 2026.11.11
 * Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 2026.10.31-2
 - Require librime-lua (rime-ice schemas use lua_processor/translator/filter)
 * Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 2026.10.31-1
