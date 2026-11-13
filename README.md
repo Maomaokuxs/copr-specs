@@ -27,7 +27,7 @@ assets/<pkg>/           # 图标、LICENSE 等（spec 通过 raw.githubuserconte
 
 | 包名 | 版本 | 说明 |
 | --- | --- | --- |
-| kazumi | 2.4.3 | 二次元追番 |
+| kazumi | 2.4.4 | 二次元追番 |
 | hmcl | 3.16.4 | Minecraft 启动器 |
 | bilibili | 1.20.0 | Bilibili 客户端 |
 | miyu | 0.7.4 | 终端 AI 助手 |
@@ -74,7 +74,7 @@ assets/<pkg>/           # 图标、LICENSE 等（spec 通过 raw.githubuserconte
 | escrcpy | 3.3.1 | scrcpy 图形界面客户端 |
 | fcitx5-wetypex | 3.0.1.684 | WeTypeX 输入法（微信输入法 Linux 适配） |
 | localsend | 1.18.2 | 开源跨平台隔空投送替代 |
-| obsidian | 1.15.0 | 本地 Markdown 知识库 |
+| obsidian | 1.15.1 | 本地 Markdown 知识库 |
 | python3-fast-colorthief | 0.0.5 | 图片主色提取 |
 | python3-pywal16 | 3.8.15 | 配色方案生成切换 |
 | wps-office | 12.1.2.29183 | WPS Office 办公套件 |
