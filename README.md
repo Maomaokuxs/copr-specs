@@ -69,7 +69,7 @@ assets/<pkg>/           # 图标、LICENSE 等（spec 通过 raw.githubuserconte
 | lazycat-terminal | 1.1.12 | Hackable 终端模拟器（标签页/分屏/透明背景） |
 | gpu-screen-recorder | 6.1.7 | ShadowPlay 式 GPU 录屏 |
 | ab-download-manager | 1.11.1 | 多线程下载管理器 |
-| babry | 0.2.0 | Wayland 智能选区截图 |
+| babry | 0.2.1 | Wayland 智能选区截图 |
 | com.cmic.mcloud | 1.1.2 | 中国移动云盘桌面客户端 |
 | escrcpy | 3.3.1 | scrcpy 图形界面客户端 |
 | fcitx5-wetypex | 3.0.1.684 | WeTypeX 输入法（微信输入法 Linux 适配） |
