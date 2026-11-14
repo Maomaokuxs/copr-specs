@@ -10,7 +10,7 @@ License:        Apache-2.0
 URL:            https://abdownloadmanager.com
 Source0:        https://github.com/amir1376/ab-download-manager/archive/refs/tags/v%{version}.tar.gz
 Source1:        https://services.gradle.org/distributions/gradle-9.2.1-bin.zip
-Source2:        abdownloadmanager.desktop
+Source2:        https://raw.githubusercontent.com/Maomaokuxs/copr-specs/main/specs/abdownloadmanager.desktop
 Source3:        https://cache-redirector.jetbrains.com/intellij-jbr/%{jbr_dir}.tar.gz
 
 ExclusiveArch:  x86_64
