@@ -68,7 +68,7 @@ assets/<pkg>/           # 图标、LICENSE 等（spec 通过 raw.githubuserconte
 | linglong-store | 3.7.0 | 玲珑应用商店社区版 |
 | lazycat-terminal | 1.1.12 | Hackable 终端模拟器（标签页/分屏/透明背景） |
 | gpu-screen-recorder | 6.1.7 | ShadowPlay 式 GPU 录屏 |
-| ab-download-manager | 1.11.1 | 多线程下载管理器 |
+| ab-download-manager | 1.11.4 | 多线程下载管理器 |
 | babry | 0.2.1 | Wayland 智能选区截图 |
 | com.cmic.mcloud | 1.1.2 | 中国移动云盘桌面客户端 |
 | escrcpy | 3.3.1 | scrcpy 图形界面客户端 |
