@@ -2,7 +2,7 @@
 %global jbr_dir jbrsdk_jcef-25.0.3-linux-x64-b508.4
 
 Name:           ab-download-manager
-Version:        1.11.1
+Version:        1.11.4
 Release:        1%{?dist}
 Summary:        A Download Manager that speeds up your downloads
 
@@ -79,6 +79,8 @@ ln -s ../../opt/abdownloadmanager/bin/ABDownloadManager %{buildroot}%{_bindir}/a
 /usr/bin/abdownloadmanager
 
 %changelog
+* Sat Nov 14 2026 Maomaokuxs <biyuanh@qq.com> - 1.11.4-1
+- Update to 1.11.4
 * Thu Oct 15 2026 Maomaokuxs <biyuanh@qq.com> - 1.11.1-1
 - Update to 1.11.1
 * Mon Oct 12 2026 Maomaokuxs <biyuanh@qq.com> - 1.11.0-2
