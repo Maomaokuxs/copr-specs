@@ -1,9 +1,9 @@
 %global debug_package %{nil}
-%global __requires_exclude ^python3\\.14dist\\(python-magic\\)
+%global __requires_exclude ^python3.*dist\\(python-magic\\)
 
 Name:           kde-material-you-colors
 Version:        2.3.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Automatic Material You color scheme generator for KDE Plasma
 
 License:        GPL-3.0-or-later
@@ -44,6 +44,8 @@ dark themes for Plasma, Konsole, and pywal.
 %{python3_sitelib}/kde_material_you_colors-%{version}*.dist-info/
 
 %changelog
+* Sun Nov 15 2026 Maomaokuxs <biyuanh@qq.com> - 2.3.0-3
+- Fix python-magic requires exclude for Python 3.15
 * Sun Nov 15 2026 Maomaokuxs <biyuanh@qq.com> - 2.3.0-2
 - Update to 2.3.0
 * Fri Aug 28 2026 Maomaokuxs <biyuanh@qq.com> - 2.2.0-1
