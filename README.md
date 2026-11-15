@@ -38,7 +38,7 @@ assets/<pkg>/           # 图标、LICENSE 等（spec 通过 raw.githubuserconte
 | waypaper | 2.9 | 壁纸管理器 |
 | wpets-bongocat | 5.0.2 | 键盘跟手猫咪挂件 |
 | hellwal | 1.0.9 | 终端取色 |
-| kde-material-you-colors | 2.2.0 | KDE Material You |
+| kde-material-you-colors | 2.3.0 | KDE Material You |
 | fcitx5-hud-paper | 1.0 | 自制 Hud Paper 主题（浅/深） |
 | biyuan-niri-config | 20260922 | niri 桌面配置模板+部署脚本 |
 | hyprwayland-scanner | 0.4.6 | wayland-scanner C++ 版（构建工具） |
