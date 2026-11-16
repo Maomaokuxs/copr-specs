@@ -111,6 +111,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/fcitx5-wetypex-settin
 %changelog
 * Mon Nov 16 2026 Maomaokuxs <biyuanh@qq.com> - 3.0.1.684-6
 - Update to upstream 3.0.1.684-6
+- Disable offline voice (requires rustc)
 * Fri Nov 13 2026 Maomaokuxs <biyuanh@qq.com> - 3.0.1.684-5
 - Update to upstream 3.0.1.684-5
 * Thu Nov 12 2026 Maomaokuxs <biyuanh@qq.com> - 3.0.1.684-4
