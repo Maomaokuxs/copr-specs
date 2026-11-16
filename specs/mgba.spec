@@ -23,7 +23,7 @@ BuildRequires:  libzip-devel
 BuildRequires:  sqlite-devel
 BuildRequires:  libedit-devel
 BuildRequires:  lua-devel
-BuildRequires:  libelf-devel
+BuildRequires:  elfutils-libelf-devel
 BuildRequires:  libglvnd-devel
 BuildRequires:  libepoxy-devel
 BuildRequires:  xz-devel
