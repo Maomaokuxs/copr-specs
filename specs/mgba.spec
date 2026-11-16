@@ -56,7 +56,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/io.mgba.mGBA.desktop
 %{_datadir}/applications/io.mgba.mGBA.desktop
 %{_datadir}/icons/hicolor/*/apps/io.mgba.mGBA.png
 %{_mandir}/man6/mgba*.6*
-%{_docdir}/%{name}/
+%{_docdir}/mGBA/
 
 %changelog
 * Mon Nov 16 2026 Maomaokuxs <biyuanh@qq.com> - 0.10.5-1
