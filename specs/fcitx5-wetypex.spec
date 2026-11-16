@@ -81,6 +81,7 @@ tar -xzf %{SOURCE1} -C vendor
     -DCMAKE_INSTALL_LIBDIR=lib64 \
     -DWETYPE_LAYER_SHELL=ON \
     -DWETYPE_BUNDLED_CURL=OFF \
+    -DWETYPE_ENABLE_VOICE=OFF \
     -DFETCHCONTENT_SOURCE_DIR_KQUEUE=%{_builddir}/%{name}-%{version}/vendor/libkqueue-46a3e130f88b0b0742575dcb01d77e336538024b
 %cmake_build
 
