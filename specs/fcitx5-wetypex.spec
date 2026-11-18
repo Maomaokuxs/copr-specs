@@ -1,11 +1,11 @@
 Name:           fcitx5-wetypex
 Version:        3.0.1.684
-Release:        6%{?dist}
+Release:        8%{?dist}
 Summary:        WeTypeX native Linux input method for Fcitx5 (WeChat input method compatibility)
 
 License:        MIT AND curl AND ISC AND BSD-2-Clause AND Apache-2.0
 URL:            https://github.com/panxuc/fcitx5-wetypex
-Source0:        https://github.com/panxuc/fcitx5-wetypex/releases/download/v3.0.1.684-6/fcitx5-wetypex-3.0.1.684.tar.gz
+Source0:        https://github.com/panxuc/fcitx5-wetypex/releases/download/v3.0.1.684-8/fcitx5-wetypex-3.0.1.684.tar.gz
 Source1:        https://github.com/mheily/libkqueue/archive/46a3e130f88b0b0742575dcb01d77e336538024b.tar.gz#/libkqueue-46a3e130f88b0b0742575dcb01d77e336538024b.tar.gz
 
 ExclusiveArch:  x86_64
@@ -110,6 +110,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/fcitx5-wetypex-settin
 %{_datadir}/licenses/fcitx5-wetypex/
 
 %changelog
+* Wed Nov 18 2026 Maomaokuxs <biyuanh@qq.com> - 3.0.1.684-8
+- Update to upstream 3.0.1.684-8
+
 * Mon Nov 16 2026 Maomaokuxs <biyuanh@qq.com> - 3.0.1.684-6
 - Update to upstream 3.0.1.684-6
 - Disable offline voice (requires rustc)
