@@ -1,5 +1,5 @@
 Name:           hyprutils
-Version:        0.14.3
+Version:        0.14.4
 Release:        1%{?dist}
 Summary:        Hyprland C++ utility library
 
@@ -43,6 +43,9 @@ against hyprutils.
 %{_libdir}/pkgconfig/hyprutils.pc
 
 %changelog
+* Wed Nov 18 2026 Maomaokuxs <biyuanh@qq.com> - 0.14.4-1
+- Update to 0.14.4
+
 * Thu Nov 05 2026 Maomaokuxs <biyuanh@qq.com> - 0.14.3-1
 - Update to 0.14.3
 
