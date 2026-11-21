@@ -1,13 +1,13 @@
 %global debug_package %{nil}
 
 Name:           hmcl
-Version:        3.16.4
+Version:        3.17.2
 Release:        1%{?dist}
 Summary:        Hello Minecraft! Launcher - multifunctional Minecraft launcher
 
 License:        GPL-3.0-only
 URL:            https://github.com/HMCL-dev/HMCL
-Source0:        https://github.com/HMCL-dev/HMCL/releases/download/v3.16.4/HMCL-3.16.4.jar
+Source0:        https://github.com/HMCL-dev/HMCL/releases/download/v3.17.2/HMCL-3.17.2.jar
 Source1:        https://raw.githubusercontent.com/Maomaokuxs/rpmbuild/main/assets/hmcl/hmcl-icon.png
 Source2:        https://raw.githubusercontent.com/HMCL-dev/HMCL/main/LICENSE#/LICENSE
 Requires:       java
@@ -62,6 +62,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 %changelog
+* Sat Nov 21 2026 Maomaokuxs <biyuanh@qq.com> - 3.17.2-1
+- Update to 3.17.2
+
 * Wed Oct 07 2026 Maomaokuxs <biyuanh@qq.com> - 3.16.4-1
 - Update to 3.16.4
 

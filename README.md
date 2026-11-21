@@ -28,7 +28,7 @@ assets/<pkg>/           # 图标、LICENSE 等（spec 通过 raw.githubuserconte
 | 包名 | 版本 | 说明 |
 | --- | --- | --- |
 | kazumi | 2.4.4 | 二次元追番 |
-| hmcl | 3.16.4 | Minecraft 启动器 |
+| hmcl | 3.17.2 | Minecraft 启动器 |
 | mgba | 0.10.5 | GBA/GB 模拟器 |
 | bilibili | 1.20.0 | Bilibili 客户端 |
 | miyu | 0.7.4 | 终端 AI 助手 |
