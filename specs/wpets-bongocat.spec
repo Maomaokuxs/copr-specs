@@ -1,10 +1,10 @@
 Name:           wpets-bongocat
-Version:        5.0.2
-Release:        2%{?dist}
+Version:        6.2.0
+Release:        1%{?dist}
 Summary:        Classic Bongo Cat Wayland overlay (keyboard reactive pet)
 License:        MIT
 URL:            https://github.com/furudbat/wayland-vpets
-Source0:        https://github.com/furudbat/wayland-vpets/archive/refs/tags/v5.0.2.tar.gz
+Source0:        https://github.com/furudbat/wayland-vpets/archive/refs/tags/v6.2.0.tar.gz
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  wayland-devel
@@ -26,7 +26,7 @@ membership in the 'input' group: sudo usermod -a -G input $USER
 and set keyboard_device= lines.
 
 %prep
-%autosetup -n wayland-vpets-5.0.2
+%autosetup -n wayland-vpets-6.2.0
 # 上游写死 -march=native 会导致 COPR 构建机指令集超出用户 CPU(SIGILL)，
 # 统一改成通用 x86-64
 grep -rl -- '-march=native' . | xargs sed -i 's/-march=native/-march=x86-64 -mtune=generic/g'
@@ -40,7 +40,7 @@ grep -rl -- '-march=native' . | xargs sed -i 's/-march=native/-march=x86-64 -mtu
 %install
 %cmake_install
 # 只留经典猫：删版本化副本、cmake 导出文件、其他宠物二进制
-rm -rf %{buildroot}%{_bindir}/bongocat-5.0.2 %{buildroot}%{_libdir}/cmake
+rm -rf %{buildroot}%{_bindir}/bongocat-6.2.0 %{buildroot}%{_libdir}/cmake
 find %{buildroot}%{_bindir} -type f ! -name 'bongocat' ! -name 'bongocat-find-devices' -delete 2>/dev/null || true
 
 %files
@@ -50,6 +50,9 @@ find %{buildroot}%{_bindir} -type f ! -name 'bongocat' ! -name 'bongocat-find-de
 %{_datadir}/bongocat/
 
 %changelog
+* Sat Nov 21 2026 Maomaokuxs <biyuanh@qq.com> - 6.2.0-1
+- Update to 6.2.0
+
 * Thu Sep 24 2026 Maomaokuxs <biyuanh@qq.com> - 5.0.2-2
 - Replace -march=native with generic x86-64 (avoid SIGILL on user CPUs)
 

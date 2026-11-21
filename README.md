@@ -37,7 +37,7 @@ assets/<pkg>/           # 图标、LICENSE 等（spec 通过 raw.githubuserconte
 | rime-ice | 2026.11.11 | 雾凇拼音 |
 | grub-btrfs | 4.14 | GRUB Btrfs 快照 |
 | waypaper | 2.9 | 壁纸管理器 |
-| wpets-bongocat | 5.0.2 | 键盘跟手猫咪挂件 |
+| wpets-bongocat | 6.2.0 | 键盘跟手猫咪挂件 |
 | hellwal | 1.0.9 | 终端取色 |
 | kde-material-you-colors | 2.3.0 | KDE Material You |
 | fcitx5-hud-paper | 1.0 | 自制 Hud Paper 主题（浅/深） |
