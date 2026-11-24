@@ -1,11 +1,11 @@
 Name:           fcitx5-wetypex
 Version:        3.0.1.684
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        WeTypeX native Linux input method for Fcitx5 (WeChat input method compatibility)
 
 License:        MIT AND curl AND ISC AND BSD-2-Clause AND Apache-2.0
 URL:            https://github.com/panxuc/fcitx5-wetypex
-Source0:        https://github.com/panxuc/fcitx5-wetypex/releases/download/v3.0.1.684-9/fcitx5-wetypex-3.0.1.684.tar.gz
+Source0:        https://github.com/panxuc/fcitx5-wetypex/releases/download/v3.0.1.684-10/fcitx5-wetypex-3.0.1.684.tar.gz
 Source1:        https://github.com/mheily/libkqueue/archive/46a3e130f88b0b0742575dcb01d77e336538024b.tar.gz#/libkqueue-46a3e130f88b0b0742575dcb01d77e336538024b.tar.gz
 
 ExclusiveArch:  x86_64
@@ -110,6 +110,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/fcitx5-wetypex-settin
 %{_datadir}/licenses/fcitx5-wetypex/
 
 %changelog
+* Tue Nov 24 2026 Maomaokuxs <biyuanh@qq.com> - 3.0.1.684-10
+- Update to upstream 3.0.1.684-10
+
 * Sat Nov 21 2026 Maomaokuxs <biyuanh@qq.com> - 3.0.1.684-9
 - Update to upstream 3.0.1.684-9
 
