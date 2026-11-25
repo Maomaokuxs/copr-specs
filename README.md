@@ -74,7 +74,7 @@ assets/<pkg>/           # 图标、LICENSE 等（spec 通过 raw.githubuserconte
 | com.cmic.mcloud | 1.1.2 | 中国移动云盘桌面客户端 |
 | escrcpy | 3.3.1 | scrcpy 图形界面客户端 |
 | fcitx5-wetypex | 3.0.1.684 | WeTypeX 输入法（微信输入法 Linux 适配） |
-| localsend | 1.18.2 | 开源跨平台隔空投送替代 |
+| localsend | 1.19.0 | 开源跨平台隔空投送替代 |
 | obsidian | 1.15.1 | 本地 Markdown 知识库 |
 | python3-fast-colorthief | 0.0.5 | 图片主色提取 |
 | python3-pywal16 | 3.8.15 | 配色方案生成切换 |

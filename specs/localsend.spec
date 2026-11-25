@@ -4,8 +4,8 @@
 %global __provides_exclude ^(%{_libdir}/%{name}/.*\\.so)
 
 Name:           localsend
-Version:        1.18.2
-Release:        5%{?dist}
+Version:        1.19.0
+Release:        1%{?dist}
 Summary:        Open source cross-platform alternative to AirDrop
 
 License:        Apache-2.0
@@ -49,16 +49,19 @@ mkdir -p %{buildroot}%{_licensedir}/%{name}
 cp -a LICENSE %{buildroot}%{_licensedir}/%{name}/
 
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/localsend_app.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/org.localsend.localsend_app.desktop
 
 %files
 %license %{_licensedir}/%{name}/LICENSE
 %{_bindir}/localsend_app
 %{_libdir}/localsend/
-%{_datadir}/applications/localsend_app.desktop
+%{_datadir}/applications/org.localsend.localsend_app.desktop
 %{_datadir}/icons/hicolor/
 
 %changelog
+* Wed Nov 25 2026 Maomaokuxs <biyuanh@qq.com> - 1.19.0-1
+- Update to 1.19.0
+
 * Tue Nov 10 2026 Maomaokuxs <biyuanh@qq.com> - 1.18.2-5
 - Rebuild to match installed release (drop ackerman/nexus)
 * Sat Oct 17 2026 Maomaokuxs <biyuanh@qq.com> - 1.18.2-1
