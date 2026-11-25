@@ -78,6 +78,7 @@ assets/<pkg>/           # 图标、LICENSE 等（spec 通过 raw.githubuserconte
 | obsidian | 1.15.1 | 本地 Markdown 知识库 |
 | python3-fast-colorthief | 0.0.5 | 图片主色提取 |
 | python3-pywal16 | 3.8.15 | 配色方案生成切换 |
+| wallust | 3.5.2 | 壁纸取色配色生成（pywal 替代） |
 | wps-office | 12.1.2.29183 | WPS Office 办公套件 |
 
 ## 许可
